@@ -36,8 +36,8 @@ module.exports = {
     },
 
     async deleteOne (req, res) {
-        const {_id} = req.params;
-        await Post.findOneAndDelete({_id})
+        const {id} = req.params;
+        await Post.findByIdAndDelete(id)
         .then((post)=>{
             if (!post) {
                 return res.status(404).send('Post não foi encontrado!');
