@@ -17,7 +17,7 @@ module.exports = {
         const fileName = `${name}.jpg` 
 
         await sharp (req.file.path)
-            .resize(1400, 800)
+            .resize(250, 200)
                 .jpeg({ quality: 100 })
                     .toFile(path.resolve(req.file.destination, 'resized', fileName))
 
