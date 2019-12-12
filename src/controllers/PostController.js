@@ -2,6 +2,15 @@ const Post = require('../models/post');
 const sharp = require('sharp');
 const path = require('path');
 const fs = require('fs');
+require('dotenv/config');
+var admin = require("firebase-admin");
+
+var serviceAccount = require('../config/key.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://itaproject-e5f3d.firebaseio.com",
+});
 
 module.exports = {
     async getAll (req, res) {
