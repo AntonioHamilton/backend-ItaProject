@@ -9,7 +9,7 @@ const upload = multer(uploadConfig);
 
 postRoutes.get('/posts', PostController.getAll);
 postRoutes.post('/posts', upload.single('image'), PostController.store);
-postRoutes.post('/posts/:title/like', LikeController.store)
-postRoutes.delete('/posts/:title', PostController.deleteOne);
+postRoutes.post('/posts/:id/like', LikeController.store)
+postRoutes.delete('/posts/:id', PostController.deleteOne);
 
 module.exports = postRoutes;
