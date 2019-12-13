@@ -23,7 +23,7 @@ module.exports = {
     async getImage (req, res) {
         const {image} = req.params;
         await database.ref(`pictures/${image}`).on('value', (response) => {
-            if (response.val()) res.status(200).send(response.val())
+            if (response.val()) res.status(200).send(response.val().fileName)
             else res.status(404).send('image not found')
         })
     },
