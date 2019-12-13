@@ -8,6 +8,7 @@ const postRoutes = new express.Router();
 const upload = multer(uploadConfig);
 
 postRoutes.get('/posts', PostController.getAll);
+postRoutes.get('/files/:image', PostController.getImage);
 postRoutes.post('/posts', upload.single('image'), PostController.store);
 postRoutes.post('/posts/:id/like', LikeController.store)
 postRoutes.delete('/posts/:id', PostController.deleteOne);

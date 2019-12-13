@@ -21,7 +21,6 @@ app.use ((req, res, next) => {
     next();
 })
 
-app.use('/files', express.static(path.resolve(__dirname, '..', 'images', 'resized')));
 app.use(require('./routes/postRoutes'));
 app.use(require('./routes/userRoutes'));
 app.use(require('./routes/authRoutes.js')(express));
