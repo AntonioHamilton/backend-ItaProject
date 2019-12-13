@@ -59,7 +59,7 @@ module.exports = {
             author,
             title,
             description,
-            image: name
+            image: file64
         }).then((post)=>(
             res.json(post)
         )).catch((err)=>(
